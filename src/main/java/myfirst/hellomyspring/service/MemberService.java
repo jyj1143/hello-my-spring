@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+//@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
-    @Autowired
+//    @Autowired
     public MemberService(MemberRepository memberRepository){
         this.memberRepository=memberRepository;
     }
@@ -30,7 +30,7 @@ public class MemberService {
 
     //람다식을 함수로 뽑아낼때, Ctrl + Alt + Shift + T
     private void validateDuplicateMember(Member member) {
-        memberRepository.findeByName(member.getName())
+        memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("이미 존재하는 회원입니다.");
                 });

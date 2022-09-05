@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-@Repository
+//@Repository
 public class MemoryMemberRepository implements MemberRepository{
     private static Map<Long,Member> store=new HashMap<>();
     private static long sequence = 0L;
@@ -29,7 +29,7 @@ public class MemoryMemberRepository implements MemberRepository{
     }
 
     @Override
-    public Optional<Member> findeByName(String name) {
+    public Optional<Member> findByName(String name) {
         return store.values().stream().filter(member1 -> member1.getName().equals(name))
                 .findAny();
         /*
