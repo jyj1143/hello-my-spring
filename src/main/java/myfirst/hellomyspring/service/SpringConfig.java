@@ -1,6 +1,7 @@
 package myfirst.hellomyspring.service;
 
 
+import myfirst.hellomyspring.aop.TimeTraceAop;
 import myfirst.hellomyspring.repository.JdbcTemplateMemberRepository;
 import myfirst.hellomyspring.repository.JpaMemberRepository;
 import myfirst.hellomyspring.repository.MemberRepository;
@@ -24,6 +25,11 @@ public class SpringConfig {
     public MemberService memberService(){
         return new MemberService(memberRepository);
     }
+
+//    @Bean
+//    public TimeTraceAop timeTraceAop() {
+//        return new TimeTraceAop();
+//    }
 
 //    private final DataSource dataSource;
 
